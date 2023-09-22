@@ -1,0 +1,727 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'open sans';
+}
+
+.contenedor {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo {
+    color: #2a8c4a;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+/* Header */
+header {
+    width: 100%;
+    height: 800px;
+    background: #11998e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(143, 85%, 58%, 0.473), hsla(175, 80%, 33%, 0.671)), url(../img/portada.jpg);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(143, 85%, 58%, 0.473), hsla(175, 80%, 33%, 0.664)), url(../img/portada.jpg);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+
+
+/* Estilo para la barra de navegación */
+nav {
+    text-align: right;
+    padding: 30px 50px 0 0;
+    position: fixed;
+    /* Fija la barra de navegación en la parte superior de la página */
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    /* Asegura que esté en la parte superior de otros elementos */
+}
+
+nav>a {
+    color: rgb(0, 0, 0);
+    /* Cambia el color del texto de los enlaces */
+    font-weight: 600;
+    /* Cambia el grosor de la fuente a 600 (más grande) */
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 10px 20px;
+    /* Añade un espaciado interior a los enlaces */
+    display: inline-block;
+    transition: color 0.3s ease, font-size 0.3s ease;
+    /* Agrega transiciones suaves a color y tamaño de fuente */
+}
+
+nav>a:hover {
+    color: #001f08;
+    /* Cambia el color del texto a verde al pasar el mouse sobre los enlaces */
+    font-size: 18px;
+    /* Cambia el tamaño de fuente a 18px al pasar el mouse sobre los enlaces */
+    text-decoration: underline;
+    /* Agrega subrayado al pasar el mouse sobre los enlaces */
+}
+
+
+header .textos-header {
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1 {
+    font-size: 50px;
+    color: #fff;
+}
+
+.textos-header h2 {
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Acerca de mí */
+main .acerca-de-mi {
+    padding: 30px 0 60px 0;
+}
+
+.contenedor-acerca-de-mi {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imagen-alumno {
+    width: 50%;
+    height: 60%;
+
+}
+
+.acerca-de-mi .contenido-textos {
+    width: 48%;
+}
+
+.contenido-textos h3 {
+    margin-bottom: 20px;
+}
+
+.contenido-textos h3 span {
+    background: #2a8c4a;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
+
+.contenido-textos p {
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+
+}
+
+/* Proyectos */
+
+.experiencia-laboral {
+    background: #d1d1d19d;
+}
+
+.galeria-pro {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+.imagen-pro {
+    width: 24%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+
+}
+
+.imagen-pro img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.imagen-pro>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-galeria {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(110, 32%, 63%, 0.7);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hover-galeria img {
+    width: 50px;
+}
+
+.hover-galeria p {
+    color: #fff;
+}
+
+.imagen-pro:hover .hover-galeria {
+    transform: scale(1);
+}
+
+
+/* Estilos para la ventana emergente */
+.ventana {
+    background: #2a8c4a;
+    width: 50%;
+    color: black;
+    /* Cambia el color del texto a negro */
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    font-weight: bold;
+    /* Hace el texto más grueso */
+    padding: 20px;
+    min-height: 250px;
+    border-radius: 10px;
+    position: absolute;
+    left: 25%;
+    top: 190%;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.ventanap2 {
+    background: #2a8c4a;
+    width: 50%;
+    color: black;
+    /* Cambia el color del texto a negro */
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    font-weight: bold;
+    /* Hace el texto más grueso */
+    padding: 20px;
+    min-height: 250px;
+    border-radius: 10px;
+    position: absolute;
+    left: 25%;
+    top: 190%;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.ventanap3 {
+    background: #2a8c4a;
+    width: 50%;
+    color: black;
+    /* Cambia el color del texto a negro */
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    font-weight: bold;
+    /* Hace el texto más grueso */
+    padding: 20px;
+    min-height: 250px;
+    border-radius: 10px;
+    position: absolute;
+    left: 25%;
+    top: 190%;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.ventanap4 {
+    background: #2a8c4a;
+    width: 50%;
+    color: black;
+    /* Cambia el color del texto a negro */
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    font-weight: bold;
+    /* Hace el texto más grueso */
+    padding: 20px;
+    min-height: 250px;
+    border-radius: 10px;
+    position: absolute;
+    left: 25%;
+    top: 190%;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Habilidades */
+
+.habilidades-section {
+    margin-top: 100px;
+    /* Agregar margen en la parte superior para separar de la sección anterior */
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards .card {
+    background-color: rgba(76, 170, 102, 0.8);
+    /* Color con transparencia */
+    display: flex;
+    width: 400px;
+    /* Cambiar el ancho */
+    height: 150px;
+    /* Cambiar la altura */
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s, font-size 0.2s;
+    /* Transiciones para el cambio de tamaño y movimiento */
+}
+
+.cards .card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
+
+.cards .card>.contenido-texto-card {
+    width: 60%;
+    color: #fff;
+    transition: font-size 0.2s;
+    /* Transición para el cambio de tamaño de fuente */
+}
+
+.cards .card:hover {
+    transform: scale(1.05);
+    /* Aumentar el tamaño al pasar el mouse */
+}
+
+.cards .card:hover>.contenido-texto-card {
+    font-size: 18px;
+    /* Cambiar el tamaño de fuente al pasar el mouse */
+}
+
+/* Experiencia */
+.experiencia {
+    background: #f2f2f2;
+    padding-bottom: 30px;
+}
+
+.experiencia-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experiencia-ind {
+    width: 28%;
+    text-align: center;
+}
+
+.experiencia-ind img {
+    width: 90%;
+}
+
+.experiencia-ind h3 {
+    margin: 10px 0;
+}
+
+.experiencia-ind p {
+    font-weight: 300;
+    text-align: justify;
+}
+
+
+/* footer */
+footer {
+    background: #2a8c4a;
+    /* Cambia el color de fondo a verde */
+    font-family: "Helvetica", "Arial";
+    padding-top: 50px;
+    text-align: center;
+}
+
+
+/* Estilos para los enlaces */
+.content-foo a {
+    background: #002c02;
+    color: #222;
+    border-radius: 100%;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    width: 60px;
+    /* Ajusta el ancho */
+    height: 60px;
+    /* Ajusta la altura */
+    margin: 15px;
+    /* Ajusta el margen para separar los elementos */
+    padding-top: 5px;
+    /* Ajusta el espacio para el ícono */
+    vertical-align: middle;
+    line-height: 60px;
+    /* Centra verticalmente el contenido en el círculo */
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+/* Cambia la disposición de los elementos a horizontal */
+.contenedor-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/* Estilos para los íconos */
+.content-foo a:before {
+    font-family: "FontAwesome", sans-serif;
+    color: #fff;
+    font-size: 20px;
+}
+
+.content-foo a.facebook:before {
+    content: '\f09a';
+}
+
+.content-foo a.twitter:before {
+    content: '\f099';
+}
+
+.content-foo a.github:before {
+    content: '\f113';
+}
+
+.content-foo a.pinterest:before {
+    content: '\f0d2';
+}
+
+/* Estilos para los nombres de las redes sociales */
+.content-foo a span {
+    background: #fff;
+    color: #222;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: -25px;
+    right: -25px;
+    padding: 5px 7px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+}
+
+/* Estilos para la flecha */
+.content-foo a span:before {
+    content: '';
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position: absolute;
+    bottom: -5px;
+    left: 40px;
+}
+
+/* Efecto de hover */
+.content-foo a:hover span {
+    bottom: 50px;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Efecto de hover para cada red social */
+.content-foo a.facebook:hover {
+    background-color: #4183d7;
+    color: #bfbfbf;
+}
+
+.content-foo a.facebook:hover span {
+    color: #4183d7;
+}
+
+.content-foo a.twitter:hover {
+    background-color: #19b5fe;
+    color: #fff;
+}
+
+.content-foo a.twitter:hover span {
+    color: #19b5fe;
+}
+
+.content-foo a.github:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.content-foo a.github:hover span {
+    color: #000;
+}
+
+.content-foo a.dribble:hover {
+    background-color: #f62459;
+    color: #fff;
+}
+
+.content-foo a.dribble:hover span {
+    color: #f62459;
+}
+
+.content-foo a.pinterest:hover {
+    background-color: #f22613;
+    color: #fff;
+}
+
+.content-foo a.pinterest:hover span {
+    color: #f22613;
+}
+
+.titulo-final {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 30px;
+    /* Ajusta el margen superior para aumentar la separación */
+    color: #000000;
+}
+
+
+@media screen and (max-width:900px) {
+    header {
+        background-position: center;
+    }
+
+    .contenedor-acerca-de-mi {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .acerca-de-mi .contenido-textos {
+        width: 90%;
+
+    }
+
+    .imagen-alumno {
+        width: 90%;
+    }
+
+    /* Proyectos */
+    .imagen-pro {
+        width: 40%;
+    }
+
+    /* Habilidades */
+
+    .cards {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards .card {
+        width: 90%;
+    }
+
+    .cards .card:first-child {
+        margin-bottom: 30px;
+    }
+
+    /* servicios */
+
+    .servicio-cont {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .servicio-ind {
+        width: 100%;
+        text-align: center;
+    }
+
+    .servicio-ind:nth-child(1),
+    .servicio-ind:nth-child(2) {
+        margin-bottom: 60px;
+    }
+
+    .servicio-ind img {
+        width: 90%;
+    }
+
+    @media screen and (max-width:500px) {
+        nav {
+            text-align: center;
+            padding: 30px 0 0 0;
+        }
+
+        nav>a {
+            margin-right: 5px;
+
+        }
+
+        .textos-header h1 {
+            font-size: 35px;
+        }
+
+        .textos-header h2 {
+            font-size: 20px;
+        }
+
+        /*Acerca de mi*/
+
+        .imagen-alumno {
+            margin-bottom: 60px;
+            width: 99%;
+
+        }
+
+        .acerca-de-mi .contenido-textos {
+            width: 95%;
+
+        }
+
+        /*Proyectos*/
+
+        .imagen-pro {
+            width: 95%;
+        }
+
+        /*Habilidades*/
+        .cards .card {
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cards .card img {
+            width: 90px;
+            height: 90px;
+        }
+
+
+        /* Footer */
+
+        .contenedor-footer {
+            flex-direction: column;
+            border: none;
+        }
+
+        .content-foo {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .content-foo h4 {
+            border: none;
+        }
+
+        .content-foo p {
+            color: #ccc;
+            border-bottom: 1px solid #f2f2f2;
+            padding-bottom: 20px;
+        }
+
+        .titulo-final {
+            font-size: 20px;
+        }
+
+    }
+
+    @media screen and (max-width: 900px) {
+        .ventana {
+            width: 70%;
+            left: 15%;
+            top: 400%;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .ventanap2 {
+            width: 70%;
+            left: 15%;
+            top: 400%;
+        }
+    }
+
+
+    @media screen and (max-width: 900px) {
+        .ventanap3 {
+            width: 70%;
+            left: 15%;
+            top: 400%;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .ventanap4 {
+            width: 70%;
+            left: 15%;
+            top: 400%;
+        }
+    }
+
+}
